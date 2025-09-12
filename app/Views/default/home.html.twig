@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="content-card">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(45deg, #2c5282, #2d3748); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">{{ title }}</h1>
+            <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">{{ content }}</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
+            <div style="text-align: center; padding: 2rem; border-radius: 10px; background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%); color: white;">
+                <h3 style="margin-bottom: 1rem;">🎨 Sistema de Themes</h3>
+                <p>Cambia la apariencia de tu sitio con nuestro sistema de themes flexible y personalizable.</p>
+            </div>
+            
+            <div style="text-align: center; padding: 2rem; border-radius: 10px; background: linear-gradient(135deg, #2c5282 0%, #2a4365 100%); color: white;">
+                <h3 style="margin-bottom: 1rem;">⚡ Rápido y Ligero</h3>
+                <p>Construido con PHP moderno y Twig para un rendimiento óptimo y fácil mantenimiento.</p>
+            </div>
+            
+            <div style="text-align: center; padding: 2rem; border-radius: 10px; background: linear-gradient(135deg, #2b6cb0 0%, #1e40af 100%); color: white;">
+                <h3 style="margin-bottom: 1rem;">🔧 Fácil de Usar</h3>
+                <p>Interfaz intuitiva y código limpio que facilita la gestión de contenidos.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/admin" class="btn" style="margin-right: 1rem;">Panel de Admin</a>
+            <a href="/themes" class="btn">Ver Themes</a>
+        </div>
+    </div>
+    
+    <div class="content-card">
+        <h2 style="text-align: center; margin-bottom: 2rem; color: #333;">Características Principales</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            <div style="padding: 1.5rem; border-left: 4px solid #2c5282;">
+                <h4 style="color: #2c5282; margin-bottom: 0.5rem;">MVC Architecture</h4>
+                <p style="color: #666;">Arquitectura Modelo-Vista-Controlador para un código organizado y mantenible.</p>
+            </div>
+            
+            <div style="padding: 1.5rem; border-left: 4px solid #2d3748;">
+                <h4 style="color: #2d3748; margin-bottom: 0.5rem;">Twig Templates</h4>
+                <p style="color: #666;">Motor de plantillas Twig para una separación clara entre lógica y presentación.</p>
+            </div>
+            
+            <div style="padding: 1.5rem; border-left: 4px solid #4a5568;">
+                <h4 style="color: #4a5568; margin-bottom: 0.5rem;">Responsive Design</h4>
+                <p style="color: #666;">Diseño adaptable que se ve perfecto en cualquier dispositivo.</p>
+            </div>
+            
+            <div style="padding: 1.5rem; border-left: 4px solid #2b6cb0;">
+                <h4 style="color: #2b6cb0; margin-bottom: 0.5rem;">Extensible</h4>
+                <p style="color: #666;">Fácil de extender con nuevas funcionalidades y módulos personalizados.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

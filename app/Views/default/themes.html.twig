@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="content-card">
+        <h1 style="text-align: center; margin-bottom: 2rem; background: linear-gradient(45deg, #2c5282, #2d3748); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Sistema de Themes</h1>
+        
+        <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 3rem;">
+            Personaliza la apariencia de tu CMS con nuestros themes prediseñados o crea el tuyo propio.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="border: 2px solid #e0e0e0; border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="height: 200px; background: linear-gradient(135deg, #2c5282 0%, #2d3748 100%); position: relative;">
+                    <div style="position: absolute; bottom: 10px; left: 10px; color: white; font-weight: bold;">Default Theme</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 15px; color: white; font-size: 0.8rem;">ACTIVO</div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem; color: #333;">Theme por Defecto</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Theme moderno con gradientes y diseño responsive. Perfecto para mostrar contenido de manera elegante.</p>
+                    <button class="btn" style="width: 100%;" disabled>Theme Activo</button>
+                </div>
+            </div>
+            
+            <div style="border: 2px solid #e0e0e0; border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="height: 200px; background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); position: relative;">
+                    <div style="position: absolute; bottom: 10px; left: 10px; color: white; font-weight: bold;">Dark Theme</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 15px; color: white; font-size: 0.8rem;">PRÓXIMAMENTE</div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem; color: #333;">Theme Oscuro</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Theme elegante con colores oscuros, ideal para sitios web modernos y profesionales.</p>
+                    <button class="btn" style="width: 100%; opacity: 0.6;" disabled>Próximamente</button>
+                </div>
+            </div>
+            
+            <div style="border: 2px solid #e0e0e0; border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="height: 200px; background: linear-gradient(135deg, #4a5568 0%, #718096 100%); position: relative;">
+                    <div style="position: absolute; bottom: 10px; left: 10px; color: white; font-weight: bold;">Minimal Theme</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 15px; color: white; font-size: 0.8rem;">PRÓXIMAMENTE</div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem; color: #333;">Theme Minimalista</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Diseño limpio y minimalista, perfecto para blogs y sitios de contenido.</p>
+                    <button class="btn" style="width: 100%; opacity: 0.6;" disabled>Próximamente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-card">
+        <h2 style="margin-bottom: 2rem; color: #333;">Cómo Crear tu Propio Theme</h2>
+        
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border-left: 4px solid #2c5282;">
+            <h3 style="color: #2c5282; margin-bottom: 1rem;">Estructura de Themes</h3>
+            <pre style="background: #2d3748; color: #e2e8f0; padding: 1rem; border-radius: 5px; overflow-x: auto; font-size: 0.9rem;">app/Views/
+├── default/           # Theme por defecto
+│   ├── base.html.twig # Plantilla base
+│   ├── home.html.twig # Página de inicio
+│   └── ...
+├── dark/              # Theme oscuro (próximamente)
+└── minimal/           # Theme minimalista (próximamente)</pre>
+            
+            <p style="margin-top: 1rem; color: #666;">
+                Cada theme es una carpeta independiente con sus propias plantillas Twig. 
+                Simplemente crea una nueva carpeta y personaliza las plantillas según tus necesidades.
+            </p>
+        </div>
+    </div>
+{% endblock %}
