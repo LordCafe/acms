@@ -1,0 +1,11 @@
+#!/bin/bash
+    run (){
+    local SCRIPT_DIR;
+    SCRIPT_DIR="$(dirname "$(dirname "$(dirname "$(realpath "$0")")")")"
+
+    echo "SCRIPT_DIR: $SCRIPT_DIR"
+    
+    php -S localhost:8088 -t "$SCRIPT_DIR"/public/ 
+  }
+
+run
