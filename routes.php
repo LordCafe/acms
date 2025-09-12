@@ -2,5 +2,6 @@
 
 return [
 
-  "/" =>["HomeController", "index"]
+  "/" =>["HomeController", "index"],
+  "/about" =>["AboutController", "index"]
 ];
