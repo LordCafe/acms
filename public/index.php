@@ -1,29 +1,32 @@
 <?php
-// Cargar rutas
 $routes = require __DIR__ . '/../routes.php';
-
-// Obtener la URL actual
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// Buscar en las rutas
-if (array_key_exists($uri, $routes)) {
-    $handler = $routes[$uri];
+$found = false;
 
-    // Si es un callback
-    if (is_callable($handler)) {
-        $handler();
-    } 
-    // Si es un controlador
-    elseif (is_array($handler)) {
-        [$controller, $method] = $handler;
+foreach ($routes as $route => $handler) {
+    // Convertir ruta dinámica a regex
+    $pattern = preg_replace('#\{[\w]+\}#', '([\w-]+)', $route);
+    $pattern = "#^$pattern$#";
 
-        require_once __DIR__ . "/../app/Controllers/$controller.php";
+    if (preg_match($pattern, $uri, $matches)) {
+        array_shift($matches); // quitar coincidencia completa
 
-        $instance = new $controller();
-        $instance->$method();
+        if (is_callable($handler)) {
+            call_user_func_array($handler, $matches);
+        } elseif (is_array($handler)) {
+            [$controller, $method] = $handler;
+            require_once __DIR__ . "/../app/Controllers/$controller.php";
+            $instance = new $controller();
+            call_user_func_array([$instance, $method], $matches);
+        }
+
+        $found = true;
+        break;
     }
-} else {
-    // Página 404
+}
+
+if (!$found) {
     http_response_code(404);
     echo "404 - Página no encontrada 😢";
 }
