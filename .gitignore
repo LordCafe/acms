@@ -1,0 +1,34 @@
+# Composer dependencies
+/vendor/
+
+# Logs
+/storage/logs/
+/*.log
+
+# Cache
+/storage/cache/
+/*.cache
+
+# Configuración sensible (generada por el instalador)
+config/config.php
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Entorno local
+.env
+.env.local
+.env.*.local
+
+# IDEs / editores
+/.idea/
+/.vscode/
+/nbproject/
+*.swp
+*.swo
+
+# Archivos temporales
+*.bak
+*.tmp
+*.temp
