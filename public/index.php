@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
 $routes = require __DIR__ . '/../routes.php';
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -16,8 +19,8 @@ foreach ($routes as $route => $handler) {
             call_user_func_array($handler, $matches);
         } elseif (is_array($handler)) {
             [$controller, $method] = $handler;
-            require_once __DIR__ . "/../app/Controllers/$controller.php";
-            $instance = new $controller();
+            $controllerClass = "App\\Controllers\\$controller";
+            $instance = new $controllerClass();
             call_user_func_array([$instance, $method], $matches);
         }
 

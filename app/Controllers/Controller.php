@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-require_once __DIR__.'/../Core/View.php';
+namespace App\Core;
 
-class Controller{
+class Controller {
 
   protected $view;
 
