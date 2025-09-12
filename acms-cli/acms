@@ -1,0 +1,41 @@
+#!/bin/bash
+
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+show_usage() {
+   
+    echo "El script se está ejecutando desde: $SCRIPT_DIR"
+    echo -e "${BLUE} Acms Command Manager${NC}"
+    echo -e "Usage: $(basename "$0") <command> [args...]"
+    echo
+    echo -e "${YELLOW}Available commands:${NC} \n"
+    if [[ -d "$SCRIPT_DIR/commands" ]]; then
+        find "$SCRIPT_DIR/commands" -maxdepth 1 -type f -executable -printf "  %f\n"
+    fi
+    echo
+    echo -e "${BLUE}Examples:${NC}"
+}
+
+if [[ $# -eq 0 ]]; then
+  show_usage
+  exit 1
+fi
+
+cmd="$1"
+
+shift
+
+cmd_path="$SCRIPT_DIR/commands/$cmd"
+
+if [[ ! -x "$cmd_path" ]]; then
+    echo -e "${RED}Error:${NC} Command '$cmd' not found or not executable."
+    exit 1
+else
+    exec "$cmd_path" "$@"
+fi
