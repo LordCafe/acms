@@ -1,6 +1,14 @@
 <?php
-class AboutController {
+require_once "Controller.php";
+
+
+class AboutController extends Controller {
     public function index() {
-        echo "Sobre nosotros  ";
+      
+      $data = [
+        "title" => "Home",
+        "description" => "Home page"
+      ];
+      $this->render("about.html.twig", $data );
     }
 }
