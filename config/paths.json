@@ -1,0 +1,8 @@
+{
+    "data": "data/",
+    "config": "config/",
+    "storage": "storage/",
+    "views": "app/Views/",
+    "cache": "storage/cache/",
+    "logs": "storage/logs/"
+}
