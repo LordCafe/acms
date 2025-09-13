@@ -9,6 +9,6 @@ class HomeController extends Controller {
     public function index() {
       $Model = new HomeModel();
       $data = $Model->get();
-      $this->render("home.html.twig", $data );
+      $this->render("home", $data );
     }
 }

@@ -10,6 +10,10 @@ class Controller {
     $this->view = new View($theme);
   }
   protected function render( $template, $data){
+    //si no contiene la extension agregar html.twig
+    if(!str_contains($template, ".")){
+      $template .= ".html.twig";
+    }
     $this->view->render($template, $data);
   }
 }
