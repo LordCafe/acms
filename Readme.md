@@ -153,6 +153,6 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 **⭐ Si te gusta este proyecto, ¡dale una estrella!**
 
-*Desarrollado con ❤️ por [Adrián](https://github.com/tu-usuario)*
+*Desarrollado con ❤️ por [Adrián](https://github.com/LordCafe)*
 
 </div>
